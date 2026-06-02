@@ -21,7 +21,10 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
-    return RedirectResponse(url="/dashboard")
+    return templates.TemplateResponse(
+        "login.html",
+        {"request": request}
+    )
 
 @app.get("/login", response_class=HTMLResponse)
 def login_page(request: Request):
