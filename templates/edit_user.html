@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="form-card">
+
+<h1>Edit User</h1>
+
+<form method="post">
+
+<input
+type="text"
+value="{{ user.username }}"
+readonly>
+
+<select name="role">
+
+<option>Admin</option>
+
+<option>Manager</option>
+
+<option>Technician</option>
+
+<option>Employee</option>
+
+<option>Vendor</option>
+
+</select>
+
+<select name="is_active">
+
+<option>Active</option>
+
+<option>Inactive</option>
+
+</select>
+
+<button type="submit">
+
+Update User
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}
+@app.get("/edit-user/{user_id}",
+         response_class=HTMLResponse)
+def edit_user_page(
+    user_id: int,
+    request: Request
+):
+
+    db = SessionLocal()
+
+    user = db.query(User).filter(
+        User.id == user_id
+    ).first()
+
+    db.close()
+
+    return templates.TemplateResponse(
+        "edit_user.html",
+        {
+            "request": request,
+            "user": user
+        }
+    )
+    
+@app.post("/edit-user/{user_id}")
+def update_user(
+    user_id: int,
+    role: str = Form(...),
+    is_active: str = Form(...)
+):
+
+    db = SessionLocal()
+
+    user = db.query(User).filter(
+        User.id == user_id
+    ).first()
+
+    user.role = role
+
+    user.is_active = is_active
+
+    db.commit()
+
+    db.close()
+
+    return RedirectResponse(
+        url="/view-users",
+        status_code=302
+    )    

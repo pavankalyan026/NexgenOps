@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}
+Tickets
+{% endblock %}
+
+{% block content %}
+
+<h1>Service Requests</h1>
+
+<table class="asset-table">
+
+<tr>
+
+<th>ID</th>
+
+<th>Title</th>
+
+<th>Priority</th>
+
+<th>Status</th>
+
+<th>Assigned To</th>
+
+<th>Remarks</th>
+
+<th>Actions</th>
+
+</tr>
+
+{% for req in requests %}
+
+<tr>
+
+<td>{{ req.id }}</td>
+
+<td>{{ req.title }}</td>
+
+<td>{{ req.priority }}</td>
+
+<td>{{ req.status }}</td>
+
+<td>{{ req.assigned_to }}</td>
+
+<td>{{ req.remarks }}</td>
+
+<td>
+
+<a class="edit-btn"
+href="/edit-request/{{ req.id }}">
+
+✏ Update
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}
+Work Orders
+{% endblock %}
+
+{% block content %}
+
+<h1>Work Orders</h1>
+
+<table class="asset-table">
+
+<tr>
+
+<th>ID</th>
+
+<th>Request ID</th>
+
+<th>Title</th>
+
+<th>Technician</th>
+
+<th>Status</th>
+
+<th>Remarks</th>
+
+<th>Completion Date</th>
+
+<th>Actions</th>
+
+</tr>
+
+{% for wo in workorders %}
+
+<tr>
+
+<td>{{ wo.id }}</td>
+
+<td>{{ wo.request_id }}</td>
+
+<td>{{ wo.title }}</td>
+
+<td>{{ wo.technician }}</td>
+
+<td>{{ wo.status }}</td>
+
+<td>{{ wo.remarks }}</td>
+
+<td>{{ wo.completion_date }}</td>
+
+<td>
+
+<a class="edit-btn"
+href="/edit-workorder/{{ wo.id }}">
+
+✏ Update
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Asset
+{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+<h1>Edit Asset</h1>
+
+<form method="post">
+
+<input
+type="text"
+name="asset_code"
+value="{{ asset.asset_code }}"
+required>
+
+<input
+type="text"
+name="asset_name"
+value="{{ asset.asset_name }}"
+required>
+
+<input
+type="text"
+name="location"
+value="{{ asset.location }}"
+required>
+
+<select name="status">
+
+<option {% if asset.status == 'Active' %}selected{% endif %}>
+Active
+</option>
+
+<option {% if asset.status == 'Maintenance' %}selected{% endif %}>
+Maintenance
+</option>
+
+<option {% if asset.status == 'Breakdown' %}selected{% endif %}>
+Breakdown
+</option>
+
+<option {% if asset.status == 'Retired' %}selected{% endif %}>
+Retired
+</option>
+
+</select>
+
+<button type="submit">
+
+Update Asset
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

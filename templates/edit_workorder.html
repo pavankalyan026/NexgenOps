@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}
+Update Work Order
+{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+<h1>Update Work Order</h1>
+
+<form method="post">
+
+<input
+type="text"
+value="{{ wo.title }}"
+readonly>
+
+<select name="status">
+
+<option {% if wo.status == 'Open' %}selected{% endif %}>
+Open
+</option>
+
+<option {% if wo.status == 'Assigned' %}selected{% endif %}>
+Assigned
+</option>
+
+<option {% if wo.status == 'In Progress' %}selected{% endif %}>
+In Progress
+</option>
+
+<option {% if wo.status == 'Completed' %}selected{% endif %}>
+Completed
+</option>
+
+<option {% if wo.status == 'Closed' %}selected{% endif %}>
+Closed
+</option>
+
+</select>
+
+<input
+type="text"
+name="remarks"
+placeholder="Remarks"
+value="{{ wo.remarks }}">
+
+<input
+type="text"
+name="completion_date"
+placeholder="Completion Date"
+value="{{ wo.completion_date }}">
+
+<button type="submit">
+
+Update Work Order
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

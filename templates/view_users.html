@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>User Management</h1>
+
+<table class="asset-table">
+
+<tr>
+
+<th>ID</th>
+
+<th>Username</th>
+
+<th>Role</th>
+
+<th>Status</th>
+
+<th>Actions</th>
+
+</tr>
+
+{% for user in users %}
+
+<tr>
+
+<td>{{ user.id }}</td>
+
+<td>{{ user.username }}</td>
+
+<td>{{ user.role }}</td>
+
+<td>{{ user.is_active }}</td>
+
+<td>
+
+<a class="edit-btn"
+href="/edit-user/{{ user.id }}">
+Edit
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

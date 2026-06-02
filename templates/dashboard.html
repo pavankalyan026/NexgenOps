@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<h1>Dashboard</h1>
+
+<div class="cards">
+
+   <div class="card">
+    <h3>📦 Assets</h3>
+    <h2>{{ asset_count }}</h2>
+</div>
+
+<div class="card">
+    <h3>🎫 Open Requests</h3>
+    <h2>{{ open_requests }}</h2>
+</div>
+
+<div class="card">
+    <h3>🛠 Open Work Orders</h3>
+    <h2>{{ open_workorders }}</h2>
+</div>
+
+<div class="card">
+    <h3>📅 PPM Schedules</h3>
+    <h2>{{ ppm_count }}</h2>
+</div>
+
+<div class="card">
+    <h3>🏢 Vendors</h3>
+    <h2>{{ active_vendors }}</h2>
+</div>
+
+<div class="card">
+    <h3>👥 Users</h3>
+    <h2>{{ user_count }}</h2>
+</div>
+    <div class="card">
+
+<h3>📊 Operations Summary</h3>
+
+<p>Assets : {{ asset_count }}</p>
+
+<p>Requests : {{ request_count }}</p>
+
+<p>Work Orders : {{ workorder_count }}</p>
+
+<p>PPM : {{ ppm_count }}</p>
+
+<p>Vendors : {{ vendor_count }}</p>
+
+<p>Users : {{ user_count }}</p>
+
+</div>
+    
+</div>
+
+<div class="quick-actions">
+
+    <a href="/assets">
+        ➕ Add Asset
+    </a>
+
+    <a href="/view-assets">
+        📋 View Assets
+    </a>
+
+    <a href="/register">
+        👤 Create User
+    </a>
+
+    <a href="/requests">
+        🎫 Create Request
+    </a>
+
+    <a href="/workorders">
+        🛠 Create Work Order
+    </a>
+
+</div>
+
+<div class="cards" style="margin-top:25px;">
+
+    <div class="card">
+
+        <h3>🟢 System Status</h3>
+
+        <br>
+
+        <p>🟢 NexgenOps Backend Running</p>
+
+        <p>🟢 Database Connected</p>
+
+        <p>🟢 Dashboard Active</p>
+
+        <p>🟢 Services Online</p>
+
+    </div>
+
+    <div class="card">
+
+        <h3>📊 Today's Summary</h3>
+
+        <br>
+
+        <p>📦 Assets : {{ asset_count }}</p>
+
+        <p>👥 Users : {{ user_count }}</p>
+
+        <p>🎫 Requests : {{ request_count }}</p>
+
+        <p>🛠 Work Orders : {{ workorder_count }}</p>
+
+    </div>
+
+</div>
+
+<div class="cards" style="margin-top:25px;">
+
+    <div class="card">
+
+        <h3>🚀 NexgenOps Platform</h3>
+
+        <br>
+
+        <p>
+            Smart Operations & Facility Management Platform
+        </p>
+
+        <br>
+
+        <p>
+            Manage Assets, Service Requests,
+            Work Orders, Users and Operations
+            from one dashboard.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h3>🔔 Recent Activity</h3>
+
+        <br>
+
+        <p>
+            Latest assets, requests and work orders
+            will appear here in upcoming versions.
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

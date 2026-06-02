@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="form-card">
+
+<h1>Add Vendor</h1>
+
+<form method="post">
+
+<input
+type="text"
+name="vendor_code"
+placeholder="Vendor Code"
+required>
+
+<input
+type="text"
+name="vendor_name"
+placeholder="Vendor Name"
+required>
+
+<select name="category">
+
+<option>HVAC</option>
+
+<option>Electrical</option>
+
+<option>Fire</option>
+
+<option>Security</option>
+
+<option>Civil</option>
+
+<option>Plumbing</option>
+
+<option>IT</option>
+
+</select>
+
+<input
+type="text"
+name="contact_person"
+placeholder="Contact Person">
+
+<input
+type="text"
+name="phone"
+placeholder="Phone">
+
+<input
+type="email"
+name="email"
+placeholder="Email">
+
+<input
+type="text"
+name="amc_start"
+placeholder="AMC Start Date">
+
+<input
+type="text"
+name="amc_end"
+placeholder="AMC End Date">
+
+<select name="status">
+
+<option>Active</option>
+
+<option>Inactive</option>
+
+</select>
+
+<button type="submit">
+
+Save Vendor
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+New Work Order
+{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+<h1>Create Work Order</h1>
+
+<form method="post">
+
+<input
+type="number"
+name="request_id"
+placeholder="Request ID"
+required>
+
+<input
+type="text"
+name="title"
+placeholder="Work Order Title"
+required>
+
+<input
+type="text"
+name="technician"
+placeholder="Technician Name"
+required>
+
+<button type="submit">
+
+Create Work Order
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

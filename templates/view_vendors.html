@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Vendor Register</h1>
+
+<table class="asset-table">
+
+<tr>
+
+<th>ID</th>
+
+<th>Code</th>
+
+<th>Name</th>
+
+<th>Category</th>
+
+<th>Contact</th>
+
+<th>AMC End</th>
+
+<th>Status</th>
+
+</tr>
+
+{% for vendor in vendors %}
+
+<tr>
+
+<td>{{ vendor.id }}</td>
+
+<td>{{ vendor.vendor_code }}</td>
+
+<td>{{ vendor.vendor_name }}</td>
+
+<td>{{ vendor.category }}</td>
+
+<td>{{ vendor.contact_person }}</td>
+
+<td>{{ vendor.amc_end }}</td>
+
+<td>{{ vendor.status }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

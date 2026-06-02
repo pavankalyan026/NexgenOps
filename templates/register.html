@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+<h1>Create User</h1>
+
+<form method="post">
+
+<input type="text"
+name="username"
+placeholder="Username">
+
+<input type="password"
+name="password"
+placeholder="Password">
+
+<select name="role">
+
+<option>Admin</option>
+
+<option>Manager</option>
+
+<option>Technician</option>
+
+<option>Employee</option>
+
+<option>Vendor</option>
+
+</select>
+
+</select>
+
+<button type="submit">
+Create User
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

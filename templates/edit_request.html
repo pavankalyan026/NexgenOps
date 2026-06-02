@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}
+Update Ticket
+{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+<h1>Update Ticket</h1>
+
+<form method="post">
+
+<input
+type="text"
+value="{{ req.title }}"
+readonly>
+
+<select name="status">
+
+<option {% if req.status == 'Open' %}selected{% endif %}>
+Open
+</option>
+
+<option {% if req.status == 'Assigned' %}selected{% endif %}>
+Assigned
+</option>
+
+<option {% if req.status == 'In Progress' %}selected{% endif %}>
+In Progress
+</option>
+
+<option {% if req.status == 'Completed' %}selected{% endif %}>
+Completed
+</option>
+
+<option {% if req.status == 'Closed' %}selected{% endif %}>
+Closed
+</option>
+
+</select>
+
+<input
+type="text"
+name="assigned_to"
+placeholder="Technician Name"
+value="{{ req.assigned_to }}">
+
+<input
+type="text"
+name="remarks"
+placeholder="Remarks"
+value="{{ req.remarks }}">
+
+<button type="submit">
+
+Update Ticket
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

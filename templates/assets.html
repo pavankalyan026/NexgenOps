@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Asset
+{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+<h1>Add Asset</h1>
+
+<form method="post">
+
+<input
+type="text"
+name="asset_code"
+placeholder="Asset Code"
+required>
+
+<input
+type="text"
+name="asset_name"
+placeholder="Asset Name"
+required>
+
+<input
+type="text"
+name="location"
+placeholder="Location"
+required>
+
+<select name="status">
+
+<option>Active</option>
+
+<option>Maintenance</option>
+
+<option>Breakdown</option>
+
+<option>Retired</option>
+
+</select>
+
+<button type="submit">
+
+Add Asset
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

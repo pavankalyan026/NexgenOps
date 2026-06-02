@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+Update PPM
+{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+<h1>Update PPM</h1>
+
+<form method="post">
+
+<input
+type="text"
+value="{{ ppm.asset_name }}"
+readonly>
+
+<select name="status">
+
+<option>Upcoming</option>
+
+<option>Due Today</option>
+
+<option>Overdue</option>
+
+<option>Completed</option>
+
+</select>
+
+<input
+type="text"
+name="remarks"
+value="{{ ppm.remarks }}"
+placeholder="Remarks">
+
+<button type="submit">
+
+Update PPM
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

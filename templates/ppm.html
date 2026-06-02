@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}
+PPM Schedule
+{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+<h1>Create PPM Schedule</h1>
+
+<form method="post">
+
+<input
+type="number"
+name="asset_id"
+placeholder="Asset ID"
+required>
+
+<input
+type="text"
+name="asset_name"
+placeholder="Asset Name"
+required>
+
+<select name="frequency">
+
+<option>Daily</option>
+
+<option>Weekly</option>
+
+<option>Monthly</option>
+
+<option>Quarterly</option>
+
+<option>Half-Yearly</option>
+
+<option>Yearly</option>
+
+</select>
+
+<input
+type="text"
+name="last_ppm_date"
+placeholder="Last PPM Date">
+
+<input
+type="text"
+name="next_due_date"
+placeholder="Next Due Date">
+
+<input
+type="text"
+name="technician"
+placeholder="Assigned Technician">
+
+<button type="submit">
+
+Create PPM
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

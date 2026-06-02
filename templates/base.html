@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}NexgenOps{% endblock %}</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="brand">
+        <img src="/static/logo.png" class="logo">
+
+        <h2>NexgenOps</h2>
+
+        <p>Smart Operations & Facility Management Platform</p>
+    </div>
+
+    <a href="/dashboard">🏠 Dashboard</a>
+
+<a href="/assets">📦 Assets</a>
+
+<a href="/view-assets">📋 Asset Register</a>
+
+<a href="/register">👥 Users</a>
+
+<a href="/requests">➕ New Ticket</a>
+
+<a href="/view-requests">🎫 Tickets</a>
+
+<a href="/workorders">➕ New Work Order</a>
+
+<a href="/view-workorders">🛠 Work Orders</a>
+<a href="/ppm">📅 New PPM</a>
+
+<a href="/view-ppm">📋 PPM List</a>
+<a href="/vendors">
+🏢 New Vendor
+</a>
+
+<a href="/view-vendors">
+📋 Vendor Register
+</a>
+<a href="/register">
+👤 New User
+</a>
+
+<a href="/view-users">
+👥 User List
+</a>
+<li><a href="/reports">📊 Reports</a></li>
+
+
+</div>
+
+<div class="main-content">
+
+    <div class="topbar">
+
+        <div>
+            <h2>Welcome Back, Pavankalyan 👋 </h2>
+        </div>
+
+        <div class="profile">
+            🔔
+            👤 Admin
+        </div>
+
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        © 2026 NexgenOps
+        <br>
+        Smart Operations & Facility Management Platform
+    </footer>
+
+</div>
+
+</body>
+</html>
