@@ -45,13 +45,30 @@ def register_page(request: Request):
     return templates.TemplateResponse("register.html", {"request": request})
 
 @app.post("/register")
-def register_user(username: str = Form(...), password: str = Form(...), role: str = Form(...)):
+def register_user(
+    username: str = Form(...),
+    email: str = Form(...),
+    password: str = Form(...),
+    role: str = Form(...)
+):
     db = SessionLocal()
-    user = User(username=username, password=password, role=role, is_active="Active")
+
+    user = User(
+        username=username,
+        email=email,
+        password=password,
+        role=role,
+        is_active="Yes"
+    )
+
     db.add(user)
     db.commit()
     db.close()
-    return RedirectResponse(url="/view-users", status_code=302)
+
+    return RedirectResponse(
+        url="/view-users",
+        status_code=302
+    )
 
 # --- DASHBOARD ---
 
