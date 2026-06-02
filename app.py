@@ -19,9 +19,9 @@ templates = Jinja2Templates(directory="templates")
 
 # --- AUTHENTICATION ROUTES ---
 
-@app.get("/")
-def home():
-    return {"message": "Welcome to NexgenOps"}
+@app.get("/", response_class=HTMLResponse)
+def home(request: Request):
+    return RedirectResponse(url="/dashboard")
 
 @app.get("/login", response_class=HTMLResponse)
 def login_page(request: Request):
