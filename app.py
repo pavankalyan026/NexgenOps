@@ -379,3 +379,4 @@ def user_report(request: Request):
         return templates.TemplateResponse("user_report.html", {"request": request, "users": users})
     finally:
         db.close()
+uvicorn app.main:app --host 0.0.0.0 --port $PORT
