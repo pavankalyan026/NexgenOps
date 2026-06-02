@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL=mysql+pymysql://user:password@host/dbname
+DATABASE_URL = "sqlite:///./nexgenops.db"
 
 engine = create_engine(
     DATABASE_URL,
