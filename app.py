@@ -68,16 +68,16 @@ def dashboard(request: Request):
         db.close()
 
     return templates.TemplateResponse(
-        "dashboard.html",
-        {
-            "request": request,
-            "asset_count": asset_count,
-            "user_count": user_count,
-            "request_count": request_count,
-            "workorder_count": workorder_count,
-            "ppm_count": ppm_count,
-            "vendor_count": vendor_count
-        }
+    request=request,
+    name="dashboard.html",
+    context={
+        "asset_count": asset_count,
+        "user_count": user_count,
+        "request_count": request_count,
+        "workorder_count": workorder_count,
+        "ppm_count": ppm_count,
+        "vendor_count": vendor_count
+    }
     )
 
 # --- ASSET MANAGEMENT ---
