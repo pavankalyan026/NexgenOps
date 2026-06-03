@@ -15,7 +15,9 @@ Base.metadata.create_all(bind=engine)
 
 # Setup Static Files and Templates
 app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(
+    directory=("templates", {})
+)
 
 # --- AUTHENTICATION ROUTES ---
 
