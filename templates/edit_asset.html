@@ -1,63 +1,59 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Asset</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
 
-{% block title %}
-Edit Asset
-{% endblock %}
-
-{% block content %}
-
-<div class="form-card">
+<body>
 
 <h1>Edit Asset</h1>
 
 <form method="post">
 
-<input
-type="text"
-name="asset_code"
-value="{{ asset.asset_code }}"
-required>
+    <input
+        type="text"
+        name="asset_code"
+        value="{{ asset.asset_code }}"
+        required>
 
-<input
-type="text"
-name="asset_name"
-value="{{ asset.asset_name }}"
-required>
+    <br><br>
 
-<input
-type="text"
-name="location"
-value="{{ asset.location }}"
-required>
+    <input
+        type="text"
+        name="asset_name"
+        value="{{ asset.asset_name }}"
+        required>
 
-<select name="status">
+    <br><br>
 
-<option {% if asset.status == 'Active' %}selected{% endif %}>
-Active
-</option>
+    <input
+        type="text"
+        name="location"
+        value="{{ asset.location }}"
+        required>
 
-<option {% if asset.status == 'Maintenance' %}selected{% endif %}>
-Maintenance
-</option>
+    <br><br>
 
-<option {% if asset.status == 'Breakdown' %}selected{% endif %}>
-Breakdown
-</option>
+    <select name="status">
 
-<option {% if asset.status == 'Retired' %}selected{% endif %}>
-Retired
-</option>
+        <option value="Active">Active</option>
 
-</select>
+        <option value="Maintenance">Maintenance</option>
 
-<button type="submit">
+        <option value="Breakdown">Breakdown</option>
 
-Update Asset
+        <option value="Retired">Retired</option>
 
-</button>
+    </select>
+
+    <br><br>
+
+    <button type="submit">
+        Update Asset
+    </button>
 
 </form>
 
-</div>
-
-{% endblock %}
+</body>
+</html>
