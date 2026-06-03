@@ -90,13 +90,10 @@ def dashboard(request: Request):
 
 @app.get("/assets", response_class=HTMLResponse)
 def assets_page(request: Request):
-    return HTMLResponse("""
-    <html>
-    <body>
-        <h1>Assets Page Working</h1>
-    </body>
-    </html>
-    """)
+    return templates.TemplateResponse(
+        "assets.html",
+        {"request": request}
+    )
 
 @app.post("/assets")
 def add_asset(asset_code: str = Form(...), asset_name: str = Form(...), location: str = Form(...), status: str = Form(...)):
