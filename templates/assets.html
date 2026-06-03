@@ -1,82 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Asset - NexgenOps</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Add Asset</title>
 </head>
-
 <body>
 
-<div class="container">
+<h1>Add Asset</h1>
 
-    <h1>Add Asset</h1>
+<form action="/assets" method="post">
 
-    <form action="/assets" method="post">
+    <input type="text" name="asset_code" placeholder="Asset Code" required>
+    <br><br>
 
-        <div class="form-group">
-            <label>Asset Code</label>
-            <input
-                type="text"
-                name="asset_code"
-                placeholder="Enter Asset Code"
-                required>
-        </div>
+    <input type="text" name="asset_name" placeholder="Asset Name" required>
+    <br><br>
 
-        <div class="form-group">
-            <label>Asset Name</label>
-            <input
-                type="text"
-                name="asset_name"
-                placeholder="Enter Asset Name"
-                required>
-        </div>
+    <input type="text" name="location" placeholder="Location" required>
+    <br><br>
 
-        <div class="form-group">
-            <label>Location</label>
-            <input
-                type="text"
-                name="location"
-                placeholder="Enter Location"
-                required>
-        </div>
+    <select name="status">
+        <option value="Active">Active</option>
+        <option value="Maintenance">Maintenance</option>
+        <option value="Breakdown">Breakdown</option>
+        <option value="Retired">Retired</option>
+    </select>
 
-        <div class="form-group">
-            <label>Status</label>
+    <br><br>
 
-            <select name="status">
+    <button type="submit">
+        Add Asset
+    </button>
 
-                <option value="Active">
-                    Active
-                </option>
-
-                <option value="Maintenance">
-                    Maintenance
-                </option>
-
-                <option value="Breakdown">
-                    Breakdown
-                </option>
-
-                <option value="Retired">
-                    Retired
-                </option>
-
-            </select>
-        </div>
-
-        <button type="submit">
-            Add Asset
-        </button>
-
-    </form>
-
-    <br>
-
-    <a href="/view-assets">
-        View Asset Register
-    </a>
-
-</div>
+</form>
 
 </body>
 </html>
