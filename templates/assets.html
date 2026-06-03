@@ -1,54 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Asset - NexgenOps</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
 
-{% block title %}
-Add Asset
-{% endblock %}
+<body>
 
-{% block content %}
+<div class="container">
 
-<div class="form-card">
+    <h1>Add Asset</h1>
 
-<h1>Add Asset</h1>
+    <form action="/assets" method="post">
 
-<form method="post">
+        <div class="form-group">
+            <label>Asset Code</label>
+            <input
+                type="text"
+                name="asset_code"
+                placeholder="Enter Asset Code"
+                required>
+        </div>
 
-<input
-type="text"
-name="asset_code"
-placeholder="Asset Code"
-required>
+        <div class="form-group">
+            <label>Asset Name</label>
+            <input
+                type="text"
+                name="asset_name"
+                placeholder="Enter Asset Name"
+                required>
+        </div>
 
-<input
-type="text"
-name="asset_name"
-placeholder="Asset Name"
-required>
+        <div class="form-group">
+            <label>Location</label>
+            <input
+                type="text"
+                name="location"
+                placeholder="Enter Location"
+                required>
+        </div>
 
-<input
-type="text"
-name="location"
-placeholder="Location"
-required>
+        <div class="form-group">
+            <label>Status</label>
 
-<select name="status">
+            <select name="status">
 
-<option>Active</option>
+                <option value="Active">
+                    Active
+                </option>
 
-<option>Maintenance</option>
+                <option value="Maintenance">
+                    Maintenance
+                </option>
 
-<option>Breakdown</option>
+                <option value="Breakdown">
+                    Breakdown
+                </option>
 
-<option>Retired</option>
+                <option value="Retired">
+                    Retired
+                </option>
 
-</select>
+            </select>
+        </div>
 
-<button type="submit">
+        <button type="submit">
+            Add Asset
+        </button>
 
-Add Asset
+    </form>
 
-</button>
+    <br>
 
-</form>
+    <a href="/view-assets">
+        View Asset Register
+    </a>
 
 </div>
 
-{% endblock %}
+</body>
+</html>
